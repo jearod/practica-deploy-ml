@@ -4,11 +4,10 @@
 # ============================================================
 
 import joblib
-import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import classification_report
 from sklearn.preprocessing import StandardScaler
 
 # Cargar el dataset Iris
@@ -46,4 +45,5 @@ print(classification_report(y_test, model.predict(X_test_scaled)))
 
 # Tu código aquí:
 joblib.dump(model, "model.pkl")
+joblib.dump(scaler, "scaler.pkl")
 print('¡Modelo guardado correctamente!')
